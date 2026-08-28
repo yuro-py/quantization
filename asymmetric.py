@@ -14,7 +14,7 @@ def dequantize(xq, s, z):
 
 
 if __name__ == "__main__":
-    x = torch.tensor([43.31, -44.93, 0.0, 22.99, -43.93, -11.35, 38.48, -20.49, -38.61, -28.02, 550000])
+    x = torch.tensor([43.31, -44.93, 0.0, 22.99, -43.93, -11.35, 38.48, -20.49, -38.61, -28.02, 550])
     xq, s, z = quantize(x)
     xd = dequantize(xq, s, z)
     print("scale:", round(s.item(), 4), "zero-point:", z.item())

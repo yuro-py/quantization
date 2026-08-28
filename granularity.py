@@ -38,3 +38,5 @@ if __name__ == "__main__":
     for name, fn in [("per-tensor", per_tensor), ("per-channel", lambda t: per_channel(t, dim=0)), ("per-group", lambda t: per_group(t, group_size=8))]:
         params = {"per-tensor": 2, "per-channel": 2 * w.shape[0], "per-group": 2 * (w.numel() // 8)}[name]
         print(f"{name:12s} mean err: {(w - fn(w)).abs().mean().item():9.5f}   ({params} params)")
+
+I know what is quantization but idk what is granularity in it, make a visualization of it which I can use to imagine what is a scale, and also imagine types of granularities.
